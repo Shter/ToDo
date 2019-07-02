@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import {Component} from '@angular/core';
 
 @Component({
   selector: 'app-root',
@@ -6,7 +6,15 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-
   title = 'ToDo';
+  allTodo: string[] = [];
+  inputString: string;
+  getInput(inputString) {
+    this.inputString = (inputString);
+  }
+  addElementToList() {
+    this.allTodo.push(this.inputString);
+    console.log(this.allTodo)
+  }
 
 }

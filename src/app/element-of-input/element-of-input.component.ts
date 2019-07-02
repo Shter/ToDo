@@ -1,13 +1,11 @@
-import { Component } from '@angular/core';
+import {Component, Input} from '@angular/core';
 
 @Component({
   selector: 'app-element-of-input',
-  template: `<li>{{inputFromInput}}</li>`,
+  templateUrl: './element-of-input.component.html',
   styleUrls: ['./element-of-input.component.css']
   })
 
 export class ElementOfInputComponent {
-
-  constructor() { }
 
 }

@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import {Component, EventEmitter, Output} from '@angular/core';
+
 
 @Component({
   selector: 'app-button',
@@ -6,7 +7,4 @@ import { Component } from '@angular/core';
   styleUrls: ['./button.component.css']
 })
 export class ButtonComponent {
-  getValueOfInput() {
-    console.log(1)
-  }
 }

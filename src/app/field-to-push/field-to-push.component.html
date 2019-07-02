@@ -1,3 +1,5 @@
-<ul>
-
-</ul>
+<li *ngFor="let elem of allTodo; let n = index">
+  {{elem}}
+  <button (click)="deleteElem(n)">Del</button>
+  <button></button>
+</li>
