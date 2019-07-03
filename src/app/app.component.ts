@@ -1,20 +1,33 @@
-import {Component} from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css']
 })
-export class AppComponent {
+export class AppComponent implements OnInit{
+  allTodo: any[] = [];
+  value = '';
   title = 'ToDo';
-  allTodo: string[] = [];
-  inputString: string;
+  inputString: any = {};
+  ngOnInit(): void {
+    if(localStorage.getItem('myToDo')) {
+      this.allTodo = JSON.parse(localStorage.getItem("myToDo"));
+      /*console.log(this.allTodo)*/
+    }
+  }
   getInput(inputString) {
-    this.inputString = (inputString);
+    function InputElement(value) {
+      this.value = value;
+      this.done = false;
+    }
+    this.inputString = new InputElement(inputString);
   }
   addElementToList() {
+    console.log(this.allTodo);
     this.allTodo.push(this.inputString);
-    console.log(this.allTodo)
+    let temp = JSON.stringify(this.allTodo);
+    localStorage.setItem("myToDo", temp);
+    this.inputString = '';
   }
-
 }

@@ -1,4 +1,4 @@
-import {Component, EventEmitter, Output} from '@angular/core';
+import {Component} from '@angular/core';
 
 
 @Component({
@@ -6,5 +6,4 @@ import {Component, EventEmitter, Output} from '@angular/core';
   templateUrl: './button.component.html',
   styleUrls: ['./button.component.css']
 })
-export class ButtonComponent {
-}
+export class ButtonComponent {}

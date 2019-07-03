@@ -6,9 +6,17 @@ import {Component, Input} from '@angular/core';
   styleUrls: ['./field-to-push.component.css']
 })
 export class FieldToPushComponent {
-  @Input() allTodo: string[];
+  @Input() allTodo: any[];
   deleteElem(n) {
-    console.log(this.allTodo);
-     this.allTodo.splice(n,1);
+    this.allTodo.splice(n,1);
+    let temp = JSON.stringify(this.allTodo);
+    localStorage.setItem("myToDo", temp);
+  }
+  redact(){
+
+  }
+  changeCheck(n) {
+    this.allTodo[n].done = !this.allTodo[n].done;
+    console.log(n);
   }
 }

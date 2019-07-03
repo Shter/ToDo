@@ -1,6 +1,6 @@
 <div>
   <h1>ToDo list</h1>
-  <app-input (textFromInput)="getInput($event)"></app-input>
-  <app-button (click)="addElementToList()"></app-button>
+  <app-input [inputString]="inputString.value" (textFromInput)="getInput($event)"></app-input>
+  <app-button (click)="addElementToList($event)"></app-button>
   <app-field-to-push [allTodo]="allTodo"></app-field-to-push>
 </div>

@@ -1,5 +1,8 @@
-<li *ngFor="let elem of allTodo; let n = index">
-  {{elem}}
-  <button (click)="deleteElem(n)">Del</button>
-  <button></button>
-</li>
+<ng-container *ngFor="let elem of allTodo; let n = index">
+  <p [ngClass]="{undone:true}">
+    <input type="checkbox" (change)="changeCheck(n)">
+    {{elem.value}}
+  </p>
+  <button (click)="deleteElem(n)">Delete</button>
+  <button (click)="redact()">Redacting</button>
+</ng-container>

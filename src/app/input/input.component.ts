@@ -1,4 +1,4 @@
-  import {Component, EventEmitter, Output} from '@angular/core';
+  import {Component, EventEmitter, Input, Output} from '@angular/core';
 
   @Component({
     selector: 'app-input',
@@ -6,7 +6,7 @@
     styleUrls: ['./input.component.css']
   })
   export class InputComponent {
-    inputString: string;
+    @Input() inputString: string = '';
     @Output() textFromInput = new EventEmitter();
 
     pushToParent() {
