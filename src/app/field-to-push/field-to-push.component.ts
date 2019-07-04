@@ -12,11 +12,14 @@ export class FieldToPushComponent {
     let temp = JSON.stringify(this.allTodo);
     localStorage.setItem("myToDo", temp);
   }
-  redact(){
-
+  redact(n) {
+    this.allTodo[n].redact = !this.allTodo[n].redact;
+    let temp = JSON.stringify(this.allTodo);
+    localStorage.setItem("myToDo", temp);
   }
   changeCheck(n) {
     this.allTodo[n].done = !this.allTodo[n].done;
-    console.log(n);
+    let temp = JSON.stringify(this.allTodo);
+    localStorage.setItem("myToDo", temp);
   }
 }

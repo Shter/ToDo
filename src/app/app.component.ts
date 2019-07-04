@@ -13,18 +13,17 @@ export class AppComponent implements OnInit{
   ngOnInit(): void {
     if(localStorage.getItem('myToDo')) {
       this.allTodo = JSON.parse(localStorage.getItem("myToDo"));
-      /*console.log(this.allTodo)*/
     }
   }
   getInput(inputString) {
     function InputElement(value) {
       this.value = value;
       this.done = false;
+      this.redact = true;
     }
     this.inputString = new InputElement(inputString);
   }
   addElementToList() {
-    console.log(this.allTodo);
     this.allTodo.push(this.inputString);
     let temp = JSON.stringify(this.allTodo);
     localStorage.setItem("myToDo", temp);
