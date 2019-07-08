@@ -1,4 +1,4 @@
-import {Component} from '@angular/core';
+import {Component, Input} from '@angular/core';
 
 
 @Component({
@@ -6,4 +6,6 @@ import {Component} from '@angular/core';
   templateUrl: './button.component.html',
   styleUrls: ['./button.component.css']
 })
-export class ButtonComponent {}
+export class ButtonComponent {
+  @Input() textButton: string;
+}

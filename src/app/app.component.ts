@@ -1,19 +1,20 @@
 import {Component, OnInit} from '@angular/core';
+import {DataService} from './data.service';
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
-  styleUrls: ['./app.component.css']
+  styleUrls: ['./app.component.css'],
+  providers: [DataService]
 })
 export class AppComponent implements OnInit{
+  constructor(private dataService: DataService){}
   allTodo: any[] = [];
   value = '';
   title = 'ToDo';
   inputString: any = {};
-  ngOnInit(): void {
-    if(localStorage.getItem('myToDo')) {
-      this.allTodo = JSON.parse(localStorage.getItem("myToDo"));
-    }
+  ngOnInit() {
+    this.allTodo = this.dataService.getData();
   }
   getInput(inputString) {
     function InputElement(value) {
@@ -25,8 +26,7 @@ export class AppComponent implements OnInit{
   }
   addElementToList() {
     this.allTodo.push(this.inputString);
-    let temp = JSON.stringify(this.allTodo);
-    localStorage.setItem("myToDo", temp);
+    this.dataService.updateData(this.allTodo);
     this.inputString = '';
   }
 }

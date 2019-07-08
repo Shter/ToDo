@@ -1,0 +1,12 @@
+<p *ngIf="elem.redact; else redacting" [ngClass]="{done: elem.done}">
+  <input type="checkbox" (change)="changeCheck(n)">
+  {{elem.value}}
+</p>
+<ng-template #redacting>
+  <input type='text' [(ngModel)]="allTodo[n].value">
+</ng-template>
+<app-button [textButton]="'Delete'" (click)="deleteElem(n)"></app-button>
+<app-button [textButton]="'Redacting'" *ngIf="elem.redact; else saveButton" (click)="redact(n)"></app-button >
+<ng-template #saveButton>
+  <app-button [textButton]="'Save'" (click)="redact(n)">Save</app-button>
+</ng-template>

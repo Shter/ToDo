@@ -1,14 +1,3 @@
 <ng-container *ngFor="let elem of allTodo; let n = index">
-  <p *ngIf="elem.redact; else redacting" [ngClass]="{done: elem.done}">
-    <input type="checkbox" (change)="changeCheck(n)">
-    {{elem.value}}
-  </p>
-  <ng-template #redacting>
-    <input [(ngModel)]="allTodo[n].value">
-  </ng-template>
-  <button (click)="deleteElem(n)">Delete</button>
-  <button *ngIf="elem.redact; else saveButton" (click)="redact(n)">Redacting</button >
-  <ng-template #saveButton>
-    <button (click)="redact(n)">Save</button>
-  </ng-template>
+  <app-element-of-input class="element" [n]="n" [allTodo]="allTodo" [elem]="elem" ></app-element-of-input>
 </ng-container>
