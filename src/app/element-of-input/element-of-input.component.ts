@@ -13,6 +13,7 @@ export class ElementOfInputComponent {
   @Input() allTodo: any[];
   @Input() n: number;
   @Input() elem: object;
+  checked;
   deleteElem(n) {
     this.allTodo.splice(n,1);
     this.dataService.updateData(this.allTodo);

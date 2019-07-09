@@ -1,5 +1,5 @@
 <p *ngIf="elem.redact; else redacting" [ngClass]="{done: elem.done}">
-  <input type="checkbox" (change)="changeCheck(n)">
+  <app-checkbox (click)="changeCheck(n)" [checked]="allTodo[n].done"></app-checkbox>
   {{elem.value}}
 </p>
 <ng-template #redacting>

@@ -8,6 +8,7 @@ import { InputComponent } from './input/input.component';
 import { FieldToPushComponent } from './field-to-push/field-to-push.component';
 import { ElementOfInputComponent } from './element-of-input/element-of-input.component';
 import {FormsModule} from '@angular/forms';
+import { CheckboxComponent } from './checkbox/checkbox.component';
 
 @NgModule({
   declarations: [
@@ -15,7 +16,8 @@ import {FormsModule} from '@angular/forms';
     ButtonComponent,
     InputComponent,
     FieldToPushComponent,
-    ElementOfInputComponent
+    ElementOfInputComponent,
+    CheckboxComponent
   ],
   imports: [
     BrowserModule,
