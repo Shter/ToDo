@@ -1,7 +1,13 @@
-.done {
-  text-decoration: line-through
-}
+  .done {
+    text-decoration: line-through
+  }
 
-.element {
-  overflow-wrap: break-word;
-}
+  .element {
+    border-top: 2px solid;
+    padding-top: 8px
+  }
+
+  input {
+    border: 2px solid;
+    border-radius: 15px;
+  }

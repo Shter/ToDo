@@ -3,7 +3,7 @@
     <h1>ToDo list</h1>
       <div class="input1">
         <app-input [inputString]="inputString.value" (textFromInput)="getInput($event)"></app-input>
-        <app-button  [textButton]="'Add'" (click)="addElementToList($event)"></app-button>
+        <app-button class="add" [textButton]="'Add'" (click)="addElementToList($event)"></app-button>
       </div>
     <app-field-to-push [allTodo]="allTodo"></app-field-to-push>
   </div>

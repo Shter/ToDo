@@ -1,4 +1,4 @@
-<p *ngIf="elem.redact; else redacting" [ngClass]="{done: elem.done}">
+<p *ngIf="elem.redact; else redacting" [ngClass]="{done: elem.done}" class="element">
   <app-checkbox (click)="changeCheck(n)" [checked]="allTodo[n].done"></app-checkbox>
   {{elem.value}}
 </p>

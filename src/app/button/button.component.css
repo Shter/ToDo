@@ -1,0 +1,9 @@
+  :host {
+    border-radius: 8px;
+    padding: 12px 16px;
+    margin: 0 16px;
+  }
+
+  :host(.add){
+
+  }

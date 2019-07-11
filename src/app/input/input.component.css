@@ -1,3 +1,14 @@
-.input{
+input {
+  padding-left: 10px;
+  padding-top: 11px;
+  padding-bottom: 13px;
+  border: 2px solid;
   width: 100%;
+  border-bottom-left-radius: 15px;
+  border-top-left-radius: 15px;
 }
+
+:focus {
+  outline: none;
+}
+
